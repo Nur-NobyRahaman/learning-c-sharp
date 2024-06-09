@@ -325,6 +325,71 @@ class Assignment10()
         //        break;
         //};
 
+        // loop
+        int number = 100;
+        for (int i = 1; i <= number; i++) {
+            Console.WriteLine(i);
+        }
+        // revese
+        int last = 1;
+        for (int i = 100; i >= last; i--)
+        {
+            Console.WriteLine(i);
+        }
+
+         //1-100 odds number
+
+        for (int i = 1 ; i<=100; i=i+2) {
+            Console.WriteLine(i);
+        }
+
+        // 1-100 even number
+
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 2 == 0) {
+                Console.WriteLine(i);
+            }
+           
+        }
+
+
+        Console.WriteLine("Enter stating number");
+        int start= Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Enter stating number");
+        int end = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Enter stating number");
+        int diff = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = start; i <= end; i = i + diff) {
+            Console.WriteLine(i);
+        }
+
+        // 1-100 even number sum
+        int sum = 0;
+        for(int i = 1 ;i<=10; i++)         
+        {
+            if (i % 2 == 0) {
+                sum = sum + i;
+            }
+           
+        }
+        Console.WriteLine(sum);
+
+        // fectorial number
+
+        int fec = 1;
+        for (int i = 1; i <= 5; i++)
+        {
+            fec = fec * i;
+
+        }
+        Console.WriteLine(fec);
+
+
+
 
     }
 }
