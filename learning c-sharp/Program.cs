@@ -304,26 +304,26 @@ class Assignment10()
 
 
         // Tmperature convater 
-        Console.WriteLine("Temperatue Convertar Started");
-        Console.WriteLine("Prass 1. Faharheeit to Celsisus");
-        Console.WriteLine("Prass 2. Celsisus to Faharheeit");
-        int number = Convert.ToInt32(Console.ReadLine());
-        switch(number)
-        {
-            case 1:
-                Console.WriteLine("Enter temperature");
-                 double farh = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine((farh - 32) * 5 / 9);
-                break;
-            case 2:
-                Console.WriteLine("Enter temperature");
-                double cel = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine((cel * 9 / 5) + 32);
-                break;
-            default:
-                Console.WriteLine("Invalid Choise");
-                break;
-        };
+        //Console.WriteLine("Temperatue Convertar Started");
+        //Console.WriteLine("Prass 1. Faharheeit to Celsisus");
+        //Console.WriteLine("Prass 2. Celsisus to Faharheeit");
+        //int number = Convert.ToInt32(Console.ReadLine());
+        //switch(number)
+        //{
+        //    case 1:
+        //        Console.WriteLine("Enter temperature");
+        //         double farh = Convert.ToDouble(Console.ReadLine());
+        //        Console.WriteLine((farh - 32) * 5 / 9);
+        //        break;
+        //    case 2:
+        //        Console.WriteLine("Enter temperature");
+        //        double cel = Convert.ToDouble(Console.ReadLine());
+        //        Console.WriteLine((cel * 9 / 5) + 32);
+        //        break;
+        //    default:
+        //        Console.WriteLine("Invalid Choise");
+        //        break;
+        //};
 
 
     }
