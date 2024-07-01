@@ -498,17 +498,25 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
-class Person()
+class Person
 {
     // variables/fields
     public string name;
     public int age;
 
     // methods/function
-    public void SetValue(string objectName , int objectAge)
+
+    //default constractor
+    public Person()
     {
-        name = objectName;
-        age = objectAge;
+        name = "test";
+        age = 15;
+    }
+
+    //prrameter constractor
+    public Person(string n, int a)
+    {
+        name=n; age=a;
     }
     public void DisplayInfo()
     {
@@ -517,21 +525,22 @@ class Person()
 }
 
 
-class Test()
+class Test
 {
     public static void Main(string[] args)
     {
-        Person p1 = new Person();
-        p1.SetValue("Nurnoby", 26);
+        Person p1 = new Person("Nurnoby",26);
         Console.WriteLine("Person 1");
         p1.DisplayInfo();
         
 
-        Person p2 = new Person();
-        p2.SetValue("Rahim", 20);
+        Person p2 = new Person("Rahim", 20);
         Console.WriteLine("Person 2");
         p2.DisplayInfo();
 
+        Person p3 = new Person();
+        Console.WriteLine("Person 3");
+        p3.DisplayInfo();
 
     }
 }
