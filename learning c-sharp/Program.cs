@@ -417,7 +417,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 //            }
 //            Console.WriteLine("-----------");
 //        }
-       
+
 
 
 //    }
@@ -432,7 +432,7 @@ class Method()
         Console.WriteLine(text);
     }
 
-    public static void Add(int number1 , int number2)
+    public static void Add(int number1, int number2)
     {
         int result = number1 + number2;
         Console.WriteLine($"{number1} + {number2} = {result}");
@@ -446,7 +446,7 @@ class Method()
     public static int Square(int number)
     {
         int result = number * number;
-       return result;
+        return result;
     }
     public static void Main(string[] args)
     {
@@ -458,5 +458,39 @@ class Method()
 
         Message("Thank You");
 
+    }
+}
+
+class LoopTemnination()
+{
+    public static void Square(int num)
+    {
+        Console.WriteLine($"{num} square of this number is {num*num}");
+    }
+    public static void Main(string[] args)
+    {
+        while (true)
+        {
+            Console.WriteLine("\n ----Entar a number 1 to 10 or write quit to exit this app---");
+            string input = Console.ReadLine() ?? "";
+            input = input.Trim().ToLower();
+            if(input == "quit")
+            {
+                Console.WriteLine("Thank you for using out app. Good bye");
+                break;
+            }
+            if(!int.TryParse(input, out int number))
+            {
+                Console.WriteLine("Entar a valid  number");
+                continue;
+            }
+            if (number <0 || number >10) {
+                Console.WriteLine("Out of valid range");
+                continue;
+            }
+            Square(number);
+
+        }
+        Console.Read();
     }
 }
