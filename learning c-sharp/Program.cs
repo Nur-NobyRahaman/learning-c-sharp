@@ -214,6 +214,7 @@
 //}
 
 using System.Security.Cryptography.X509Certificates;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 class Assignment10()
 {
@@ -327,7 +328,8 @@ class Assignment10()
 
         // loop
         int number = 100;
-        for (int i = 1; i <= number; i++) {
+        for (int i = 1; i <= number; i++)
+        {
             Console.WriteLine(i);
         }
         // revese
@@ -337,9 +339,10 @@ class Assignment10()
             Console.WriteLine(i);
         }
 
-         //1-100 odds number
+        //1-100 odds number
 
-        for (int i = 1 ; i<=100; i=i+2) {
+        for (int i = 1; i <= 100; i = i + 2)
+        {
             Console.WriteLine(i);
         }
 
@@ -347,15 +350,16 @@ class Assignment10()
 
         for (int i = 1; i <= 100; i++)
         {
-            if (i % 2 == 0) {
+            if (i % 2 == 0)
+            {
                 Console.WriteLine(i);
             }
-           
+
         }
 
 
         Console.WriteLine("Enter stating number");
-        int start= Convert.ToInt32(Console.ReadLine());
+        int start = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("Enter stating number");
         int end = Convert.ToInt32(Console.ReadLine());
@@ -363,18 +367,20 @@ class Assignment10()
         Console.WriteLine("Enter stating number");
         int diff = Convert.ToInt32(Console.ReadLine());
 
-        for (int i = start; i <= end; i = i + diff) {
+        for (int i = start; i <= end; i = i + diff)
+        {
             Console.WriteLine(i);
         }
 
         // 1-100 even number sum
         int sum = 0;
-        for(int i = 1 ;i<=10; i++)         
+        for (int i = 1; i <= 10; i++)
         {
-            if (i % 2 == 0) {
+            if (i % 2 == 0)
+            {
                 sum = sum + i;
             }
-           
+
         }
         Console.WriteLine(sum);
 
@@ -388,8 +394,33 @@ class Assignment10()
         }
         Console.WriteLine(fec);
 
+        Console.WriteLine("Enter a number");
+        int number = Convert.ToInt32(Console.ReadLine());
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine($"{number} X {i} = {number * i} ");
 
+        }
+
+        // 2 theke 8 ghar ar namota
+
+        Console.WriteLine("Start number");
+        int startNumber = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("End number");
+        int EndNumber = Convert.ToInt32(Console.ReadLine());
+
+        for(int i = startNumber; i <= EndNumber; i++) 
+        {
+            for (int j = 1; j <= 10; j++)
+            {
+                Console.WriteLine($"{i} X {j} = {i * j} ");
+            }
+            Console.WriteLine("-----------");
+        }
+       
 
 
     }
+
+
 }
