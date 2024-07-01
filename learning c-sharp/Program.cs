@@ -216,211 +216,40 @@
 using System.Security.Cryptography.X509Certificates;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-class Assignment10()
+
+
+class Method()
 {
-    public static void Main(string[] args)
+    public static void Message(string text)
     {
-        //string day;
-        //Console.WriteLine("Enter a day of the week");
-        //day = Convert.ToString(Console.ReadLine());
-
-        //switch (day.ToLower())
-        //{
-        //    case "sunday":
-        //    case "monday":
-        //    case "tuesday":
-        //    case "wednesday":
-        //    case "thusday":
-        //        Console.WriteLine("weekday");
-        //        break;
-        //    case "firday":
-        //    case "saturday":
-        //        Console.WriteLine("weekend");
-        //        break;
-        //    default:
-        //        Console.WriteLine("is not valid day");
-        //        break;
-
-
-
-        //}
-        // short switch
-
-        //string message = day.ToLower() switch
-        //{
-        //    "sunday"=> "weekday",
-        //    "monday"=> "weekday",
-        //    "tuesday" => "weekday",
-        //    "wednesday" => "weekday",
-        //    "thusday" => "weekday",
-        //    "firday" => "weekend",
-        //    "saturday" => "weekend",
-        //    _=> "is not valid day"
-        //};
-        //Console.WriteLine(message);
-
-        //object number = 5.5;
-        //string message = number switch
-        //{
-        //    int => "integer",
-        //    float => "float",
-        //    double => "double",
-        //    string => "string",
-
-        //    _ => "Char"
-        //};
-        //Console.WriteLine(message);
-        // switch statement a conditon use
-        // Console.WriteLine("Enter a number");
-
-
-        //switch (number)
-        //{ 
-        //    // switch case a conditon use korte hole when use korte hobe
-        //    case int num when num < 1 || num >10:
-        //        Console.WriteLine("Number is out of range");
-        //        break;
-        //    case int num when num%2==0 :
-        //        Console.WriteLine("Even number");
-        //        break;
-        //    default:
-        //        Console.WriteLine("Odd number");
-        //        break;
-        //}
-        // short switch
-        //if (int.TryParse(Console.ReadLine(), out int number))
-
-        //{
-        //    string result = number switch
-        //    {
-        //        int num when (num >= 1 && num <= 10) => num % 2 == 0 ? $"{num} Even number" : $"{num} Odd number",
-        //        _ => number + " is out of range"
-        //    };
-        //    Console.WriteLine(result);
-        //}
-        //else
-        //{
-        //    Console.WriteLine("invalide number");
-        //}
-
-
-        // Tmperature convater 
-        //Console.WriteLine("Temperatue Convertar Started");
-        //Console.WriteLine("Prass 1. Faharheeit to Celsisus");
-        //Console.WriteLine("Prass 2. Celsisus to Faharheeit");
-        //int number = Convert.ToInt32(Console.ReadLine());
-        //switch(number)
-        //{
-        //    case 1:
-        //        Console.WriteLine("Enter temperature");
-        //         double farh = Convert.ToDouble(Console.ReadLine());
-        //        Console.WriteLine((farh - 32) * 5 / 9);
-        //        break;
-        //    case 2:
-        //        Console.WriteLine("Enter temperature");
-        //        double cel = Convert.ToDouble(Console.ReadLine());
-        //        Console.WriteLine((cel * 9 / 5) + 32);
-        //        break;
-        //    default:
-        //        Console.WriteLine("Invalid Choise");
-        //        break;
-        //};
-
-        // loop
-        int number = 100;
-        for (int i = 1; i <= number; i++)
-        {
-            Console.WriteLine(i);
-        }
-        // revese
-        int last = 1;
-        for (int i = 100; i >= last; i--)
-        {
-            Console.WriteLine(i);
-        }
-
-        //1-100 odds number
-
-        for (int i = 1; i <= 100; i = i + 2)
-        {
-            Console.WriteLine(i);
-        }
-
-        // 1-100 even number
-
-        for (int i = 1; i <= 100; i++)
-        {
-            if (i % 2 == 0)
-            {
-                Console.WriteLine(i);
-            }
-
-        }
-
-
-        Console.WriteLine("Enter stating number");
-        int start = Convert.ToInt32(Console.ReadLine());
-
-        Console.WriteLine("Enter stating number");
-        int end = Convert.ToInt32(Console.ReadLine());
-
-        Console.WriteLine("Enter stating number");
-        int diff = Convert.ToInt32(Console.ReadLine());
-
-        for (int i = start; i <= end; i = i + diff)
-        {
-            Console.WriteLine(i);
-        }
-
-        // 1-100 even number sum
-        int sum = 0;
-        for (int i = 1; i <= 10; i++)
-        {
-            if (i % 2 == 0)
-            {
-                sum = sum + i;
-            }
-
-        }
-        Console.WriteLine(sum);
-
-        // fectorial number
-
-        int fec = 1;
-        for (int i = 1; i <= 5; i++)
-        {
-            fec = fec * i;
-
-        }
-        Console.WriteLine(fec);
-
-        Console.WriteLine("Enter a number");
-        int number = Convert.ToInt32(Console.ReadLine());
-        for (int i = 1; i <= 10; i++)
-        {
-            Console.WriteLine($"{number} X {i} = {number * i} ");
-
-        }
-
-        // 2 theke 8 ghar ar namota
-
-        Console.WriteLine("Start number");
-        int startNumber = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("End number");
-        int EndNumber = Convert.ToInt32(Console.ReadLine());
-
-        for(int i = startNumber; i <= EndNumber; i++) 
-        {
-            for (int j = 1; j <= 10; j++)
-            {
-                Console.WriteLine($"{i} X {j} = {i * j} ");
-            }
-            Console.WriteLine("-----------");
-        }
-       
-
-
+        Console.WriteLine(text);
     }
 
+    public static void Add(int number1 , int number2)
+    {
+        int result = number1 + number2;
+        Console.WriteLine($"{number1} + {number2} = {result}");
+    }
 
+    public static void Sub(int number1, int number2)
+    {
+        int result = number1 - number2;
+        Console.WriteLine($"{number1} - {number2} = {result}");
+    }
+    public static int Square(int number)
+    {
+        int result = number * number;
+       return result;
+    }
+    public static void Main(string[] args)
+    {
+        Message("Welcome to calculator");
+        Add(20, 30);
+        Sub(20, 30);
+        int result = Square(20);
+        Console.WriteLine($"Square of 20 is {result}");
+
+        Message("Thank You");
+
+    }
 }
