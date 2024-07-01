@@ -213,6 +213,7 @@
 //    }
 //}
 
+
 using System.Security.Cryptography.X509Certificates;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -425,72 +426,112 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 //}
 
-class Method()
+//class Method()
+//{
+//    public static void Message(string text)
+//    {
+//        Console.WriteLine(text);
+//    }
+
+//    public static void Add(int number1, int number2)
+//    {
+//        int result = number1 + number2;
+//        Console.WriteLine($"{number1} + {number2} = {result}");
+//    }
+
+//    public static void Sub(int number1, int number2)
+//    {
+//        int result = number1 - number2;
+//        Console.WriteLine($"{number1} - {number2} = {result}");
+//    }
+//    public static int Square(int number)
+//    {
+//        int result = number * number;
+//        return result;
+//    }
+//    public static void Main(string[] args)
+//    {
+//        Message("Welcome to calculator");
+//        Add(20, 30);
+//        Sub(20, 30);
+//        int result = Square(20);
+//        Console.WriteLine($"Square of 20 is {result}");
+
+//        Message("Thank You");
+
+//    }
+//}
+
+//class LoopTemnination()
+//{
+//    public static void Square(int num)
+//    {
+//        Console.WriteLine($"{num} square of this number is {num*num}");
+//    }
+//    public static void Main(string[] args)
+//    {
+//        while (true)
+//        {
+//            Console.WriteLine("\n ----Entar a number 1 to 10 or write quit to exit this app---");
+//            string input = Console.ReadLine() ?? "";
+//            input = input.Trim().ToLower();
+//            if(input == "quit")
+//            {
+//                Console.WriteLine("Thank you for using out app. Good bye");
+//                break;
+//            }
+//            if(!int.TryParse(input, out int number))
+//            {
+//                Console.WriteLine("Entar a valid  number");
+//                continue;
+//            }
+//            if (number <0 || number >10) {
+//                Console.WriteLine("Out of valid range");
+//                continue;
+//            }
+//            Square(number);
+
+//        }
+//        Console.Read();
+//    }
+//}
+
+
+
+class Person()
 {
-    public static void Message(string text)
-    {
-        Console.WriteLine(text);
-    }
+    // variables/fields
+    public string name;
+    public int age;
 
-    public static void Add(int number1, int number2)
+    // methods/function
+    public void SetValue(string objectName , int objectAge)
     {
-        int result = number1 + number2;
-        Console.WriteLine($"{number1} + {number2} = {result}");
+        name = objectName;
+        age = objectAge;
     }
-
-    public static void Sub(int number1, int number2)
+    public void DisplayInfo()
     {
-        int result = number1 - number2;
-        Console.WriteLine($"{number1} - {number2} = {result}");
-    }
-    public static int Square(int number)
-    {
-        int result = number * number;
-        return result;
-    }
-    public static void Main(string[] args)
-    {
-        Message("Welcome to calculator");
-        Add(20, 30);
-        Sub(20, 30);
-        int result = Square(20);
-        Console.WriteLine($"Square of 20 is {result}");
-
-        Message("Thank You");
-
+        Console.WriteLine($"Name = {name} Age = {age}\n");
     }
 }
 
-class LoopTemnination()
+
+class Test()
 {
-    public static void Square(int num)
-    {
-        Console.WriteLine($"{num} square of this number is {num*num}");
-    }
     public static void Main(string[] args)
     {
-        while (true)
-        {
-            Console.WriteLine("\n ----Entar a number 1 to 10 or write quit to exit this app---");
-            string input = Console.ReadLine() ?? "";
-            input = input.Trim().ToLower();
-            if(input == "quit")
-            {
-                Console.WriteLine("Thank you for using out app. Good bye");
-                break;
-            }
-            if(!int.TryParse(input, out int number))
-            {
-                Console.WriteLine("Entar a valid  number");
-                continue;
-            }
-            if (number <0 || number >10) {
-                Console.WriteLine("Out of valid range");
-                continue;
-            }
-            Square(number);
+        Person p1 = new Person();
+        p1.SetValue("Nurnoby", 26);
+        Console.WriteLine("Person 1");
+        p1.DisplayInfo();
+        
 
-        }
-        Console.Read();
+        Person p2 = new Person();
+        p2.SetValue("Rahim", 20);
+        Console.WriteLine("Person 2");
+        p2.DisplayInfo();
+
+
     }
 }
