@@ -394,33 +394,33 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 //        }
 //        Console.WriteLine(fec);
 
-Console.WriteLine("Enter a number");
-int number = Convert.ToInt32(Console.ReadLine());
-for (int i = 1; i <= 10; i++)
-{
-    Console.WriteLine($"{number} X {i} = {number * i} ");
+//        Console.WriteLine("Enter a number");
+//        int number = Convert.ToInt32(Console.ReadLine());
+//        for (int i = 1; i <= 10; i++)
+//        {
+//            Console.WriteLine($"{number} X {i} = {number * i} ");
 
-}
+//        }
 
-// 2 theke 8 ghar ar namota
+//        // 2 theke 8 ghar ar namota
 
-Console.WriteLine("Start number");
-int startNumber = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("End number");
-int EndNumber = Convert.ToInt32(Console.ReadLine());
+//        Console.WriteLine("Start number");
+//        int startNumber = Convert.ToInt32(Console.ReadLine());
+//        Console.WriteLine("End number");
+//        int EndNumber = Convert.ToInt32(Console.ReadLine());
 
-for (int i = startNumber; i <= EndNumber; i++)
-{
-    for (int j = 1; j <= 10; j++)
-    {
-        Console.WriteLine($"{i} X {j} = {i * j} ");
-    }
-    Console.WriteLine("-----------");
-}
+//        for(int i = startNumber; i <= EndNumber; i++) 
+//        {
+//            for (int j = 1; j <= 10; j++)
+//            {
+//                Console.WriteLine($"{i} X {j} = {i * j} ");
+//            }
+//            Console.WriteLine("-----------");
+//        }
        
 
 
-    }
+//    }
 
 
 //}
