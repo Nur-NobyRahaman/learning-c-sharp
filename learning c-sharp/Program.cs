@@ -633,8 +633,8 @@ class StudentManagement
     {
         try
         {
-            Student student1 = new Student("nurnoby",new DateTime(1998,06,24),"12588");
-            Student student2 = new Student("rahim",new DateTime(2001,06,24),"1258");
+            Student student1 = new Student("nurnoby", new DateTime(1998, 06, 24), "12588");
+            Student student2 = new Student("rahim", new DateTime(2001, 06, 24), "1258");
             Console.WriteLine("Student Details");
             Console.WriteLine("-----------------");
             student1.Display();
@@ -643,6 +643,37 @@ class StudentManagement
         catch (Exception ex) {
             Console.WriteLine($"Error : {ex.Message}");
         }
+
+        //string[] names = { "nurnoby, rahim, rineira","alicent","demon" };
+        //foreach (string name in names)
+        //{
+        //    Console.WriteLine(name);
+        //}
+        int[] numbers = { -20, 30 ,-90,50,40,-52,0};
+        int[] posativeNumber = new int[20];
+        int sum = 0;
+        //for (int i = 0; i < numbers.Length; i++) {
+        //    sum = sum + number[i];
+        //}
+        foreach(int number in numbers)
+        {
+            if (number > 0) {
+                Console.WriteLine(number);
+            }
+        }
+
+        // matrix array
+        int[,] matrix = { { 1,2,3},{4,5,6 } };
+        for (int row = 0; row < matrix.GetLength(0); row++) 
+        { 
+            for(int col =0; col < matrix.GetLength(1); col++)
+            {
+                Console.Write(matrix[row,col]);
+            }
+            Console.WriteLine();
+        }
+       
+
     }
     
 }
