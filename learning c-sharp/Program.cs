@@ -215,6 +215,7 @@
 
 
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 //class Assignment10()
@@ -524,6 +525,31 @@ class Person
     }
 }
 
+class Animal
+{
+    private string name;
+    private string color;
+    private int age;
+    // properties
+    public int Age
+    {
+        get; set;
+
+    }
+    public string Name
+    {
+        get { return name; }
+        set { if (value.Length >= 3) {
+                name = value;
+            } }
+    }
+    public string Color
+    {
+        get { return color; }
+        set { color = value; }
+    }
+
+}
 
 class Test
 {
@@ -541,6 +567,13 @@ class Test
         Person p3 = new Person();
         Console.WriteLine("Person 3");
         p3.DisplayInfo();
+
+        Animal cat = new Animal();
+        cat.Name = "simba";
+        cat.Age = 1;
+        cat.Color = "white";
+        Console.WriteLine($"Name = {cat.Name} Age = {cat.Age} Color = {cat.Color}\n");
+
 
     }
 }
