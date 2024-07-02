@@ -215,6 +215,7 @@
 
 
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Channels;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -499,81 +500,149 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
-class Person
+//class Person
+//{
+//    // variables/fields
+//    public string name;
+//    public int age;
+
+//    // methods/function
+
+//    //default constractor
+//    public Person()
+//    {
+//        name = "test";
+//        age = 15;
+//    }
+
+//    //prrameter constractor
+//    public Person(string n, int a)
+//    {
+//        name=n; age=a;
+//    }
+//    public void DisplayInfo()
+//    {
+//        Console.WriteLine($"Name = {name} Age = {age}\n");
+//    }
+//}
+
+//class Animal
+//{
+//    private string name;
+//    private string color;
+//    private int age;
+//    // properties
+//    public int Age
+//    {
+//        get; set;
+
+//    }
+//    public string Name
+//    {
+//        get { return name; }
+//        set { if (value.Length >= 3) {
+//                name = value;
+//            } }
+//    }
+//    public string Color
+//    {
+//        get { return color; }
+//        set { color = value; }
+//    }
+
+//}
+
+//class Test
+//{
+//    public static void Main(string[] args)
+//    {
+//        Person p1 = new Person("Nurnoby",26);
+//        Console.WriteLine("Person 1");
+//        p1.DisplayInfo();
+        
+
+//        Person p2 = new Person("Rahim", 20);
+//        Console.WriteLine("Person 2");
+//        p2.DisplayInfo();
+
+//        Person p3 = new Person();
+//        Console.WriteLine("Person 3");
+//        p3.DisplayInfo();
+
+//        Animal cat = new Animal();
+//        cat.Name = "simba";
+//        cat.Age = 1;
+//        cat.Color = "white";
+//        Console.WriteLine($"Name = {cat.Name} Age = {cat.Age} Color = {cat.Color}\n");
+
+
+//    }
+//}
+
+class Student
 {
-    // variables/fields
-    public string name;
-    public int age;
-
-    // methods/function
-
-    //default constractor
-    public Person()
-    {
-        name = "test";
-        age = 15;
-    }
-
-    //prrameter constractor
-    public Person(string n, int a)
-    {
-        name=n; age=a;
-    }
-    public void DisplayInfo()
-    {
-        Console.WriteLine($"Name = {name} Age = {age}\n");
-    }
-}
-
-class Animal
-{
-    private string name;
-    private string color;
-    private int age;
     // properties
-    public int Age
+    public string? Name { get; private set; }
+    public DateTime DateOfBirth { get; private set; }
+    public string? RollNumber{ get; private set; }
+    public int CalculateAge()
     {
-        get; set;
+        int age = DateTime.Now.Year - DateOfBirth.Year;
+        return DateTime.Now < DateOfBirth.AddYears(age)? age-1 : age;
+    }
+    //constractor
 
-    }
-    public string Name
+   public Student(string name, DateTime dateOfBirth, string rollNumber)
     {
-        get { return name; }
-        set { if (value.Length >= 3) {
-                name = value;
-            } }
-    }
-    public string Color
-    {
-        get { return color; }
-        set { color = value; }
+        InputValidation(name, dateOfBirth, rollNumber);
+        Name = name;
+        DateOfBirth = dateOfBirth;
+        RollNumber = rollNumber;
     }
 
+    public static void InputValidation(string name, DateTime dateOfBirth, string rollNumber)
+    {
+        if (string.IsNullOrEmpty(name))
+        {
+            throw new ArgumentException("Name can not be null or empty");
+        }
+        if (dateOfBirth > DateTime.Now)
+        {
+            throw new ArgumentException("Date of Birth can not be future");
+        }
+        if (dateOfBirth == default)
+        {
+            throw new ArgumentException("Date of Birth can not be null or empty");
+        }
+        if (string.IsNullOrEmpty(rollNumber))
+        {
+            throw new ArgumentException("Roll Number can not be null or empty");
+        }
+    }
+
+    public void Display()
+    {
+
+        Console.WriteLine($"Name : {Name} Date of Birth : {DateOfBirth.ToShortDateString()}" +
+            $" Roll Number : {RollNumber} Age : {CalculateAge()}");
+    }
 }
-
-class Test
+class StudentManagement
 {
     public static void Main(string[] args)
     {
-        Person p1 = new Person("Nurnoby",26);
-        Console.WriteLine("Person 1");
-        p1.DisplayInfo();
-        
-
-        Person p2 = new Person("Rahim", 20);
-        Console.WriteLine("Person 2");
-        p2.DisplayInfo();
-
-        Person p3 = new Person();
-        Console.WriteLine("Person 3");
-        p3.DisplayInfo();
-
-        Animal cat = new Animal();
-        cat.Name = "simba";
-        cat.Age = 1;
-        cat.Color = "white";
-        Console.WriteLine($"Name = {cat.Name} Age = {cat.Age} Color = {cat.Color}\n");
-
-
+        try
+        {
+            Student student1 = new Student("nurnoby",new DateTime(1998,06,24),"12588");
+            Student student2 = new Student("rahim",new DateTime(2001,06,24),"1258");
+            Console.WriteLine("Student Details");
+            Console.WriteLine("-----------------");
+            student1.Display();
+            student2.Display();
+        }
+        catch (Exception ex) {
+            Console.WriteLine($"Error : {ex.Message}");
+        }
     }
+    
 }
