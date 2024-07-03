@@ -707,8 +707,78 @@ class StudentManagement
 
             Console.WriteLine();
         }
-       
+
+        // array
+        try {
+            Console.Write("\n \nHow many number you want : ");
+            int size = InputValid();
+            int[] digites = new int[size];
+            int summation = 0;
+            double avg= 0;
+
+
+            // input from user
+            for (int i = 0; i < digites.Length; i++)
+            {
+                Console.Write($"Enter number {i + 1}: ");
+                int digit = InputValid();
+                digites[i] = digit;
+            }
+            // find max or min value
+            int maxDigit = digites[0];
+            int minDigit = digites[0];
+            for (int i = 1; i < digites.Length; i++)
+            {
+             
+                if(maxDigit < digites[i])
+                {
+                    maxDigit = digites[i];
+                }
+                if(minDigit > digites[i])
+                {
+                    minDigit = digites[i];
+                }
+
+            }
+            // sum all value
+
+            foreach(var digite in digites)
+            {
+                summation += digite;
+            }
+            // avarage
+           avg =(float) summation/digites.Length;
+
+            Console.WriteLine($"max = {maxDigit}");
+            Console.WriteLine($"min = {minDigit}");
+            Console.WriteLine($"summation = {summation}");
+            Console.WriteLine($"avarage = {avg:F2}");
+        } catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+        
+
+
+
+
+
 
     }
-    
+    public static int InputValid()
+    {
+        while (true)
+        {
+            string input = Console.ReadLine() ?? "";
+            if (int.TryParse(input, out int number))
+            {
+                return number;
+            }
+            else
+            {
+                Console.Write("Envalid number. Enter a enteger number : ");
+            }
+        }
+       
+    }
 }
