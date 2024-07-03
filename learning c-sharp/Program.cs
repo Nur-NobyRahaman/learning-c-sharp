@@ -672,6 +672,41 @@ class StudentManagement
             }
             Console.WriteLine();
         }
+        //jacket array
+
+        //    int[][] jeckedArray =
+        //    {
+        //     new [] {1,2,3},
+        //     new [] { 1 },
+        //     new [] { 2, 3 },
+        //     new [] { 1, 2, 3, 4, 5, 6 }
+        //};
+
+        int[][] jeckedArray = new int[4][];
+        jeckedArray[0]= new int[] {1,2,3};
+        jeckedArray[1]= new int[] {1};
+        jeckedArray[2]= new int[] {2,3};
+        jeckedArray[3]= new int[] {1,2,3,4,5,6};
+
+        //for (int row = 0; row <= jeckedArray.Length; row++)
+        //{
+        //    for (int col = 0; col < jeckedArray[row].Length; col++)
+        //    {
+        //        Console.Write($"{jeckedArray[row][col]} ");
+        //    }
+        //    Console.WriteLine();
+        //}
+
+        foreach (var row in jeckedArray)
+        {
+            foreach (var items in row)
+            {
+
+                Console.Write( items ); 
+            }
+
+            Console.WriteLine();
+        }
        
 
     }
