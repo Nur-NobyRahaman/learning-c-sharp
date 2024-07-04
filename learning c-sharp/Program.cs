@@ -214,6 +214,7 @@
 //}
 
 
+using System.ComponentModel;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Channels;
 using System.Xml.Linq;
@@ -757,7 +758,25 @@ class StudentManagement
         {
             Console.WriteLine($"Error: {ex.Message}");
         }
-        
+        //filterting with where
+        List<int> list = new List<int> { 1, 3,  5,  7, };
+        var evenNumber = list.Where(num => num % 2 == 0);
+        Console.WriteLine($"Even number count : {evenNumber.Count()}");
+        if (evenNumber.Any())
+        {
+            Console.Write($" Even Number : ");
+            foreach (var digite in evenNumber)
+            {
+                Console.Write($"{digite} ");
+            }
+            Console.WriteLine();
+        } else {
+            Console.WriteLine($"No even number  ");
+        }
+
+     
+      
+
 
 
 
