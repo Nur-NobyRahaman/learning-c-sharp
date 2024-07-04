@@ -628,195 +628,231 @@ class Student
             $" Roll Number : {RollNumber} Age : {CalculateAge()}");
     }
 }
-class StudentManagement
+class StudentDetails
 {
-    public static void Main(string[] args)
+    public string Name { get; set; }
+    public int Score { get; set; }
+    class StudentManagement
     {
-        try
+        public static void Main(string[] args)
         {
-            Student student1 = new Student("nurnoby", new DateTime(1998, 06, 24), "12588");
-            Student student2 = new Student("rahim", new DateTime(2001, 06, 24), "1258");
-            Console.WriteLine("Student Details");
-            Console.WriteLine("-----------------");
-            student1.Display();
-            student2.Display();
-        }
-        catch (Exception ex) {
-            Console.WriteLine($"Error : {ex.Message}");
-        }
-
-        //string[] names = { "nurnoby, rahim, rineira","alicent","demon" };
-        //foreach (string name in names)
-        //{
-        //    Console.WriteLine(name);
-        //}
-        int[] numbers = { -20, 30 ,-90,50,40,-52,0};
-        int[] posativeNumber = new int[20];
-        int sum = 0;
-        //for (int i = 0; i < numbers.Length; i++) {
-        //    sum = sum + number[i];
-        //}
-        foreach(int number in numbers)
-        {
-            if (number > 0) {
-                Console.WriteLine(number);
-            }
-        }
-
-        // matrix array
-        int[,] matrix = { { 1,2,3},{4,5,6 } };
-        for (int row = 0; row < matrix.GetLength(0); row++) 
-        { 
-            for(int col =0; col < matrix.GetLength(1); col++)
+            try
             {
-                Console.Write(matrix[row,col]);
+                Student student1 = new Student("nurnoby", new DateTime(1998, 06, 24), "12588");
+                Student student2 = new Student("rahim", new DateTime(2001, 06, 24), "1258");
+                Console.WriteLine("Student Details");
+                Console.WriteLine("-----------------");
+                student1.Display();
+                student2.Display();
             }
-            Console.WriteLine();
-        }
-        //jacket array
-
-        //    int[][] jeckedArray =
-        //    {
-        //     new [] {1,2,3},
-        //     new [] { 1 },
-        //     new [] { 2, 3 },
-        //     new [] { 1, 2, 3, 4, 5, 6 }
-        //};
-
-        int[][] jeckedArray = new int[4][];
-        jeckedArray[0]= new int[] {1,2,3};
-        jeckedArray[1]= new int[] {1};
-        jeckedArray[2]= new int[] {2,3};
-        jeckedArray[3]= new int[] {1,2,3,4,5,6};
-
-        //for (int row = 0; row <= jeckedArray.Length; row++)
-        //{
-        //    for (int col = 0; col < jeckedArray[row].Length; col++)
-        //    {
-        //        Console.Write($"{jeckedArray[row][col]} ");
-        //    }
-        //    Console.WriteLine();
-        //}
-
-        foreach (var row in jeckedArray)
-        {
-            foreach (var items in row)
+            catch (Exception ex)
             {
-
-                Console.Write( items ); 
+                Console.WriteLine($"Error : {ex.Message}");
             }
 
-            Console.WriteLine();
-        }
-
-        // array
-        try {
-            Console.Write("\n \nHow many number you want : ");
-            int size = InputValid();
-            int[] digites = new int[size];
-            int summation = 0;
-            double avg= 0;
-
-
-            // input from user
-            for (int i = 0; i < digites.Length; i++)
+            //string[] names = { "nurnoby, rahim, rineira","alicent","demon" };
+            //foreach (string name in names)
+            //{
+            //    Console.WriteLine(name);
+            //}
+            int[] numbers = { -20, 30, -90, 50, 40, -52, 0 };
+            int[] posativeNumber = new int[20];
+            int sum = 0;
+            //for (int i = 0; i < numbers.Length; i++) {
+            //    sum = sum + number[i];
+            //}
+            foreach (int number in numbers)
             {
-                Console.Write($"Enter number {i + 1}: ");
-                int digit = InputValid();
-                digites[i] = digit;
-            }
-            // find max or min value
-            int maxDigit = digites[0];
-            int minDigit = digites[0];
-            for (int i = 1; i < digites.Length; i++)
-            {
-             
-                if(maxDigit < digites[i])
+                if (number > 0)
                 {
-                    maxDigit = digites[i];
+                    Console.WriteLine(number);
                 }
-                if(minDigit > digites[i])
+            }
+
+            // matrix array
+            int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 } };
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
                 {
-                    minDigit = digites[i];
+                    Console.Write(matrix[row, col]);
+                }
+                Console.WriteLine();
+            }
+            //jacket array
+
+            //    int[][] jeckedArray =
+            //    {
+            //     new [] {1,2,3},
+            //     new [] { 1 },
+            //     new [] { 2, 3 },
+            //     new [] { 1, 2, 3, 4, 5, 6 }
+            //};
+
+            int[][] jeckedArray = new int[4][];
+            jeckedArray[0] = new int[] { 1, 2, 3 };
+            jeckedArray[1] = new int[] { 1 };
+            jeckedArray[2] = new int[] { 2, 3 };
+            jeckedArray[3] = new int[] { 1, 2, 3, 4, 5, 6 };
+
+            //for (int row = 0; row <= jeckedArray.Length; row++)
+            //{
+            //    for (int col = 0; col < jeckedArray[row].Length; col++)
+            //    {
+            //        Console.Write($"{jeckedArray[row][col]} ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            foreach (var row in jeckedArray)
+            {
+                foreach (var items in row)
+                {
+
+                    Console.Write(items);
                 }
 
+                Console.WriteLine();
             }
-            // sum all value
 
-            foreach(var digite in digites)
+            // array
+            try
             {
-                summation += digite;
+                Console.Write("\n \nHow many number you want : ");
+                int size = InputValid();
+                int[] digites = new int[size];
+                int summation = 0;
+                double avg = 0;
+
+
+                // input from user
+                for (int i = 0; i < digites.Length; i++)
+                {
+                    Console.Write($"Enter number {i + 1}: ");
+                    int digit = InputValid();
+                    digites[i] = digit;
+                }
+                // find max or min value
+                int maxDigit = digites[0];
+                int minDigit = digites[0];
+                for (int i = 1; i < digites.Length; i++)
+                {
+
+                    if (maxDigit < digites[i])
+                    {
+                        maxDigit = digites[i];
+                    }
+                    if (minDigit > digites[i])
+                    {
+                        minDigit = digites[i];
+                    }
+
+                }
+                // sum all value
+
+                foreach (var digite in digites)
+                {
+                    summation += digite;
+                }
+                // avarage
+                avg = (float)summation / digites.Length;
+
+                Console.WriteLine($"max = {maxDigit}");
+                Console.WriteLine($"min = {minDigit}");
+                Console.WriteLine($"summation = {summation}");
+                Console.WriteLine($"avarage = {avg:F2}");
             }
-            // avarage
-           avg =(float) summation/digites.Length;
-
-            Console.WriteLine($"max = {maxDigit}");
-            Console.WriteLine($"min = {minDigit}");
-            Console.WriteLine($"summation = {summation}");
-            Console.WriteLine($"avarage = {avg:F2}");
-        } catch (Exception ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-        }
-        //filterting with where
-        List<int> list = new List<int> { 1, 3,  5,  7, };
-        var evenNumber = list.Where(num => num % 2 == 0);
-        Console.WriteLine($"Even number count : {evenNumber.Count()}");
-        if (evenNumber.Any())
-        {
-            Console.Write($" Even Number : ");
-            foreach (var digite in evenNumber)
+            catch (Exception ex)
             {
-                Console.Write($"{digite} ");
+                Console.WriteLine($"Error: {ex.Message}");
             }
-            Console.WriteLine();
-        } else {
-            Console.WriteLine($"No even number  ");
-        }
-        // filtering with where for words
-
-        List<string> fruits = new List<string> { "apple","orange","mango","lichu","banana" };
-        var longFruits = fruits.Where(fruit => fruit.Length > 5);
-
-        Console.WriteLine($"LongFruits count : {longFruits.Count()}");
-        if (longFruits.Any())
-        {
-            Console.Write($" LongFruits : ");
-            foreach (var digite in longFruits)
+            //filterting with where
+            List<int> list = new List<int> { 1, 3, 5, 7, };
+            var evenNumber = list.Where(num => num % 2 == 0);
+            Console.WriteLine($"Even number count : {evenNumber.Count()}");
+            if (evenNumber.Any())
             {
-                Console.Write($"{digite} ");
-            }
-            Console.WriteLine();
-        }
-        else
-        {
-            Console.WriteLine($"No LongFruits  ");
-        }
-
-
-
-
-
-
-
-
-
-
-    }
-    public static int InputValid()
-    {
-        while (true)
-        {
-            string input = Console.ReadLine() ?? "";
-            if (int.TryParse(input, out int number))
-            {
-                return number;
+                Console.Write($" Even Number : ");
+                foreach (var digite in evenNumber)
+                {
+                    Console.Write($"{digite} ");
+                }
+                Console.WriteLine();
             }
             else
             {
-                Console.Write("Envalid number. Enter a enteger number : ");
+                Console.WriteLine($"No even number  ");
             }
+            // filtering with where for words
+
+            List<string> fruits = new List<string> { "apple", "orange", "mango", "lichu", "banana" };
+            var longFruits = fruits.Where(fruit => fruit.Length > 5);
+
+            Console.WriteLine($"LongFruits count : {longFruits.Count()}");
+            if (longFruits.Any())
+            {
+                Console.Write($" LongFruits : ");
+                foreach (var digite in longFruits)
+                {
+                    Console.Write($"{digite} ");
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine($"No LongFruits  ");
+            }
+
+            // filtering with where for student into class 
+            List<StudentDetails> students = new List<StudentDetails>
+            {
+                new StudentDetails { Name = "nurnoby", Score = 100 },
+                new StudentDetails { Name = "rahim", Score = 70 },
+                new StudentDetails { Name = "karim", Score = 40 },
+                new StudentDetails { Name = "demon", Score = 95 },
+                new StudentDetails { Name = "rineira", Score = 90 },
+                new StudentDetails { Name = "reinish", Score = 85 },
+                new StudentDetails { Name = "agon", Score = 70 },
+            };
+            var studentsScoreMoreThen80 = students.Where(student => student.Score > 80);
+            Console.WriteLine($"studentsScoreMoreThen80 count : {studentsScoreMoreThen80.Count()}");
+            if (studentsScoreMoreThen80.Any())
+            {
+                foreach (var student in studentsScoreMoreThen80)
+                {
+                    Console.WriteLine($"studentsScoreMoreThen80  : Name =  {student.Name} Score = {student.Score} ");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"No studentsScoreMoreThen80  ");
+            }
+
+
+
+
+
+
+
+
+
+
         }
-       
+        public static int InputValid()
+        {
+            while (true)
+            {
+                string input = Console.ReadLine() ?? "";
+                if (int.TryParse(input, out int number))
+                {
+                    return number;
+                }
+                else
+                {
+                    Console.Write("Envalid number. Enter a enteger number : ");
+                }
+            }
+
+        }
     }
 }
