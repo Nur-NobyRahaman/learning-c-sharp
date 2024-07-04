@@ -773,9 +773,28 @@ class StudentManagement
         } else {
             Console.WriteLine($"No even number  ");
         }
+        // filtering with where for words
 
-     
-      
+        List<string> fruits = new List<string> { "apple","orange","mango","lichu","banana" };
+        var longFruits = fruits.Where(fruit => fruit.Length > 5);
+
+        Console.WriteLine($"LongFruits count : {longFruits.Count()}");
+        if (longFruits.Any())
+        {
+            Console.Write($" LongFruits : ");
+            foreach (var digite in longFruits)
+            {
+                Console.Write($"{digite} ");
+            }
+            Console.WriteLine();
+        }
+        else
+        {
+            Console.WriteLine($"No LongFruits  ");
+        }
+
+
+
 
 
 
